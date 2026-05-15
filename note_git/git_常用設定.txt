@@ -30,7 +30,12 @@
 
 #5. 遠程倉庫
 
+    - 建立公key
+
+        ssh-keygen -t ed25519 -C "fx53168@example.com"
+
     - 查看遠程
+
         git remote
 
     - 遠程操作 
@@ -45,6 +50,8 @@
 
     	git push [--set-upstream] origin main
 	    推送到遠端分支綁定關聯關係(只有第一次推送時才需要此參數)
+	
+	git branch -vv 查看遠程、本地關聯
 
     ※[ 重要 ] push 到遠端前，務必記得先pull，解決衝突後再push
 
