@@ -9,7 +9,7 @@
 
 
 #2. 常用指令配置別名
-   ## 打開用戶目錄(C:\user\{USER NAME}，創建.bashrc文件
+   ## 打開用戶目錄(C:\user\{USER NAME}，創建.bashrc文件)
 
    touch ~/.bashrc
 
@@ -55,3 +55,24 @@
 
     ※[ 重要 ] push 到遠端前，務必記得先pull，解決衝突後再push
 
+#6. 刪除分支
+    
+    git branch -d <branch name>
+
+    誤刪時查詢 Hash code. 例如:of3e9b
+    git reflog
+
+#7. 合併
+
+    git merge dev --no-ff
+        先checkout至被合併的分支待命, 例如：(HEAD->main) git merge dev [ 是指把dev當前的狀態合併到 main]
+
+    git reset HEAD^ --hard
+        合併錯誤時返回上一步
+
+    git reset of3e9b --hard (先用 git reflog 查 hash code)
+
+#8. rebase 錯誤時
+
+    git reset ORIG_HEAD --hard
+        只能回退一步
