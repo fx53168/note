@@ -1,0 +1,50 @@
+#1. 基本配置
+   
+   git config --global user.name "Peter"
+   git config --global user.email "fx53168@gmail.com"
+
+   ## 查看配置信息
+   git config --global user.name
+   git config --global user.email
+
+
+#2. 常用指令配置別名
+   ## 打開用戶目錄(C:\user\{USER NAME}，創建.bashrc文件
+
+   touch ~/.bashrc
+
+   ##在.bashrc文件中輸入如下內容：
+   
+   #用於輸出git提交日誌
+   alias lg='git log --pretty=oneline --all --graph --abbrev-commit'
+
+   #用於輸出當前目錄所有文件及基本信息
+   alias ll='ls -al'
+
+#3. 查詢個人 Git alias
+
+   git config --get--regexp alias
+
+#4. 查詢全局 Git alias
+   git config --global --get--regexp alias
+
+#5. 遠程倉庫
+
+    - 查看遠程
+        git remote
+
+    - 遠程操作 
+
+        git clone git@xxxxx.xxx.x.xx (資料夾名稱可選)
+
+	git fetch [remote name] [branch name]
+            抓取(只拉不併)
+
+	git pull [remote name] [branch name]
+	    拉取(拉+併)
+
+    	git push [--set-upstream] origin main
+	    推送到遠端分支綁定關聯關係(只有第一次推送時才需要此參數)
+
+    ※[ 重要 ] push 到遠端前，務必記得先pull，解決衝突後再push
+
