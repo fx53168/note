@@ -13,20 +13,32 @@
 
    touch ~/.bashrc
 
-   ##在.bashrc文件中輸入如下內容：
+    - 在.bashrc文件中輸入如下內容：
    
-   #用於輸出git提交日誌
-   alias lg='git log --pretty=oneline --all --graph --abbrev-commit'
+    - 用於輸出git提交日誌
+        alias lg='git log --pretty=oneline --all --graph --abbrev-commit'
 
-   #用於輸出當前目錄所有文件及基本信息
-   alias ll='ls -al'
+    - 用於輸出當前目錄所有文件及基本信息
+        alias ll='ls -al'
+
 
 #3. 查詢個人 Git alias
-
-   git config --get--regexp alias
+    git config --get--regexp alias
 
 #4. 查詢全局 Git alias
-   git config --global --get--regexp alias
+    git config --global --get--regexp alias
+    
+    - 設置 alias 別名
+        git config --global alias.<別名> <指令>
+        例：git config --global alias.st status 
+    
+    - My alias settings
+        alias.st status
+        alias.co checkout
+        alias.br branch
+        alias.cm commit -m
+        alias.last log -1 HEAD
+        alias.l5 log --oneline -n 5
 
 #5. 遠程倉庫
 
